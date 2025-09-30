@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing 101: An Interactive Guide to Spotting Scams</title>
+    <meta name="description" content="Learn to identify and prevent phishing attacks with our interactive 3D guide. Test your knowledge with a quiz and protect yourself online.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Three.js -->
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js"
+        }
+    }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* bg-gray-950 */
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #2dd4bf, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-300 antialiased">
+
+    <!-- 
+    ================================================================================
+    | AI Agent TODO Checklist:                                                     |
+    ================================================================================
+    | - [ ] Generate optimized SVG icons for section headers and buttons.          |
+    | - [ ] Provide high-quality alt text for all visual elements.                 |
+    | - [ ] Create localized string files (e.g., en.json, es.json) and replace   |
+    |       hardcoded text with a localization function.                           |
+    | - [ ] Produce a short promotional video (15-30s) using a tool like Veo to    |
+    |       showcase the interactive 3D demo and quiz features.                    |
+    ================================================================================
+    -->
+
+    <!-- Header / Nav Bar -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-gray-950/80 backdrop-blur-sm border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#hero" class="text-xl font-bold text-gradient">Phishing 101</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#techniques" class="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Techniques</a>
+                        <a href="#interactive-demo" class="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Demo</a>
+                        <a href="#prevention" class="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Prevention</a>
+                        <a href="#quiz" class="text-gray-300 hover:text-cyan-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Quiz</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="text-center pt-12 pb-20 sm:pt-20 sm:pb-28">
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-gradient">
+                Don't Get Hooked
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
+                A friendly, interactive guide to understanding and avoiding phishing scams. 🎣 Let's turn you into a human firewall.
+            </p>
+            <div class="mt-10">
+                <a href="#techniques" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">
+                    Learn the Lures
+                </a>
+            </div>
+        </section>
+
+        <hr class="border-gray-800" />
+
+        <!-- Techniques Section -->
+        <section id="techniques" class="py-16 sm:py-24">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl flex items-center justify-center gap-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                    </svg>
+                    Common Phishing Lures
+                </h2>
+                <p class="mt-4 text-lg text-gray-400">Recognize these five common patterns to stay safe.</p>
+            </div>
+            <div id="techniques-grid" class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Techniques will be injected here by JavaScript -->
+            </div>
+        </section>
+        
+        <hr class="border-gray-800" />
+        
+        <!-- Interactive Demo Section -->
+        <section id="interactive-demo" class="py-16 sm:py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl flex items-center justify-center gap-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                    </svg>
+                    The Phishing Ocean
+                </h2>
+                <p class="mt-4 text-lg text-gray-400">Hover over the emails to inspect them. Click on a suspicious one to see why it's a threat.</p>
+            </div>
+            <div id="three-scene-container" class="relative w-full h-[500px] bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                <canvas id="three-canvas" class="w-full h-full block"></canvas>
+                <div id="loader" class="absolute inset-0 flex items-center justify-center text-gray-400">
+                    <p>Scroll down to load interactive demo...</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-800" />
+
+        <!-- Prevention Section -->
+        <section id="prevention" class="py-16 sm:py-24">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl flex items-center justify-center gap-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+                    </svg>
+                    Your Digital Shield
+                </h2>
+                <p class="mt-4 text-lg text-gray-400">General tips to build strong security habits.</p>
+            </div>
+            <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- Prevention tips -->
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-800 text-center flex flex-col items-center justify-center gap-y-3 hover:border-pink-400/50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-pink-400"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M21.75 12h-2.25m-1.666 5.834l-1.591-1.591M5.25 4.5l1.591 1.591M2.25 12h2.25m1.666 5.834l1.591-1.591M12 18v2.25" /></svg>
+                    <p class="font-semibold text-lg text-white">Think Before You Click</p>
+                </div>
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-800 text-center flex flex-col items-center justify-center gap-y-3 hover:border-pink-400/50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-pink-400"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" /></svg>
+                    <p class="font-semibold text-lg text-white">Verify Senders</p>
+                </div>
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-800 text-center flex flex-col items-center justify-center gap-y-3 hover:border-pink-400/50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-pink-400"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" /></svg>
+                    <p class="font-semibold text-lg text-white">Use a Password Manager</p>
+                </div>
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-800 text-center flex flex-col items-center justify-center gap-y-3 hover:border-pink-400/50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-pink-400"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
+                    <p class="font-semibold text-lg text-white">Enable 2FA Everywhere</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-800" />
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="py-16 sm:py-24">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl flex items-center justify-center gap-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-cyan-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                    </svg>
+                    Test Your Knowledge
+                </h2>
+                <p class="mt-4 text-lg text-gray-400">Think you can spot a phish? Let's find out.</p>
+                <p class="mt-2 text-sm text-gray-500">High Score: <span id="high-score">0</span>/<span id="total-questions"></span></p>
+            </div>
+            <div id="quiz-container" class="mt-12 max-w-2xl mx-auto bg-gray-900 p-6 sm:p-8 rounded-lg border border-gray-800">
+                <!-- Quiz content will be injected here -->
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-24">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <a href="#hero" class="inline-block mb-8 p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors" aria-label="Scroll to top">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-cyan-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+            </a>
+            <h3 class="text-2xl font-bold text-gradient">Stay Vigilant</h3>
+            <p class="mt-4 max-w-2xl mx-auto text-gray-400">This guide is an educational tool. Always be cautious and verify information through official channels.</p>
+            <div class="mt-8 text-sm text-gray-500">
+                <p>&copy; <span id="footer-year"></span> Phishing 101. Built for educational purposes.</p>
+                <p class="mt-1">Designed to help you become a human firewall.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden" aria-modal="true" role="dialog">
+        <div id="modal-content" class="bg-gray-800 text-white max-w-lg w-full rounded-xl border border-cyan-400/20 shadow-2xl shadow-cyan-500/10 p-6 relative">
+            <!-- Modal content injected here -->
+        </div>
+    </div>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // --- DATA ---
+        const phishingTechniques = [
+          {
+            id: 'spoofing',
+            title: "Spoofed Email",
+            short: "From: support@paypaI.com",
+            description: "Attackers forge the 'From' address to make an email look like it came from a legitimate source, like your bank or a known company. They often use subtle misspellings (e.g., 'paypaI' with a capital 'i' instead of an 'l').",
+            redFlags: ["Mismatched sender name and email address.", "Subtle typos in the domain name.", "Generic greetings like 'Dear Customer'."],
+            example: "An email from 'Netflix <support@netfIix-billing.com>' says your account is on hold, but the real domain is netflix.com.",
+            prevention: "Always inspect the sender's full email address. If unsure, navigate to the official website directly instead of clicking links."
+          },
+          {
+            id: 'malicious-link',
+            title: "Malicious Links",
+            short: "Click here: bit.ly/y3kP2a",
+            description: "Emails contain links that seem legitimate but lead to malicious websites. Attackers use URL shorteners or hyperlink innocent-looking text to hide the true destination.",
+            redFlags: ["URLs that don't match the supposed sender's domain.", "Use of URL shorteners (e.g., bit.ly) for official business.", "Hovering over a link reveals a different, suspicious URL in the status bar."],
+            example: "A link text says 'Update Your Account Details' but the underlying URL points to 'http://secure-login-update.info/paypal'.",
+            prevention: "Hover over links before clicking to preview the URL. Be suspicious of shortened URLs and manually type in known, safe addresses."
+          },
+          {
+            id: 'urgent-cta',
+            title: "Urgent Call-to-Action",
+            short: "URGENT: ACTION REQUIRED",
+            description: "This technique creates a sense of panic or urgency to trick you into acting without thinking. Phrases like 'account suspended' or 'unauthorized login attempt' are common.",
+            redFlags: ["Threatening language or deadlines.", "Demands for immediate action.", "Promises of rewards for quick action or threats of penalties for inaction."],
+            example: "'Your account has been compromised. Click here within 24 hours to secure it, or it will be permanently deleted.'",
+            prevention: "Take a breath. Legitimate organizations rarely demand immediate action via email. Verify any urgent request through an official, separate channel."
+          },
+          {
+            id: 'malware-attachment',
+            title: "Attachment Malware",
+            short: "Invoice_Final.doc.exe",
+            description: "The email includes an attachment (like a PDF, Word doc, or ZIP file) that, when opened, installs malware on your device. The malware can steal data, encrypt files for ransom, or spy on your activity.",
+            redFlags: ["Unexpected attachments, especially from unknown senders.", "Files with generic names like 'invoice.pdf' or 'payment_details.zip'.", "Double file extensions like '.pdf.exe'."],
+            example: "You receive an email with a ZIP file named 'shipping_receipt.zip'. Unzipping and opening it runs a hidden program that installs a keylogger.",
+            prevention: "Never open unsolicited attachments. Use antivirus software to scan all downloads before opening them."
+          },
+          {
+            id: 'credential-harvesting',
+            title: "Credential Harvesting",
+            short: "Verify your login details",
+            description: "The goal is to steal your login credentials. The email links to a fake login page that looks identical to a real one (e.g., Google, Microsoft 365, your bank). When you enter your details, the attacker captures them.",
+            redFlags: ["Emails asking you to 'verify' or 'update' account details via a link.", "The linked page's URL is not the official domain.", "The fake site may look real but lacks HTTPS or has an invalid certificate."],
+            example: "An email mimicking Microsoft asks you to sign in to read a secure message. The link goes to a perfect replica of the Microsoft login page on a different URL.",
+            prevention: "Enable Two-Factor Authentication (2FA) on all accounts. Always check the URL in the address bar before entering credentials."
+          }
+        ];
+
+        const quizQuestions = [
+          {
+            question: "You receive an email from 'support@amazn.com'. What is the most likely phishing technique being used?",
+            options: ["Urgent CTA", "Spoofed Email", "Malware Attachment", "Credential Harvesting"],
+            correctAnswer: "Spoofed Email",
+          },
+          {
+            question: "An email demands you click a link within one hour to prevent account deletion. This is a classic example of:",
+            options: ["Malware Attachment", "Spoofed Email", "Urgent Call-to-Action", "A friendly reminder"],
+            correctAnswer: "Urgent Call-to-Action",
+          },
+          {
+            question: "Before clicking a link in an email, what is the safest first step?",
+            options: ["Click it to see where it goes", "Hover your mouse over it to preview the URL", "Forward it to a friend", "Reply to the sender"],
+            correctAnswer: "Hover your mouse over it to preview the URL",
+          },
+          {
+            question: "A fake login page designed to steal your password is a form of:",
+            options: ["Spoofed Email", "Credential Harvesting", "Attachment Malware", "Urgent CTA"],
+            correctAnswer: "Credential Harvesting",
+          },
+          {
+            question: "What is the best way to protect your accounts, even if your password is stolen?",
+            options: ["Using a very long password", "Changing your password weekly", "Enabling Two-Factor Authentication (2FA)", "Writing passwords down"],
+            correctAnswer: "Enabling Two-Factor Authentication (2FA)",
+          },
+        ];
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            populateTechniques();
+            setupQuiz();
+            setupModal();
+            setupLazyThreeJS();
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
+        });
+
+        // --- UI & CONTENT FUNCTIONS ---
+        function populateTechniques() {
+            const grid = document.getElementById('techniques-grid');
+            grid.innerHTML = phishingTechniques.map(tech => `
+                <div class="bg-gray-900/50 p-6 rounded-lg border border-gray-800 hover:border-cyan-400/50 hover:scale-105 transform transition-all duration-300 flex flex-col">
+                    <h3 class="text-xl font-semibold text-cyan-400">${tech.title}</h3>
+                    <p class="mt-2 text-gray-400 flex-grow">${tech.description}</p>
+                    <p class="mt-4 text-sm font-mono text-pink-400 bg-gray-900 p-2 rounded">${tech.short}</p>
+                </div>
+            `).join('');
+        }
+
+        // --- MODAL ---
+        function setupModal() {
+            const modal = document.getElementById('modal');
+            modal.addEventListener('click', () => modal.classList.add('hidden'));
+            document.getElementById('modal-content').addEventListener('click', e => e.stopPropagation());
+            window.addEventListener('keydown', e => {
+                if (e.key === 'Escape') modal.classList.add('hidden');
+            });
+        }
+
+        function showModal(technique) {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            content.innerHTML = `
+                <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="Close dialog">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <h3 class="text-2xl font-bold text-cyan-400 mb-4">${technique.title}</h3>
+                <p class="text-gray-300 mb-4">${technique.description}</p>
+                <strong class="text-pink-400">Red Flags:</strong>
+                <ul class="list-disc list-inside mt-2 mb-4 text-gray-400 space-y-1">
+                    ${technique.redFlags.map(flag => `<li>${flag}</li>`).join('')}
+                </ul>
+                <strong class="text-pink-400">Example:</strong>
+                <p class="mt-2 mb-4 text-gray-400 italic bg-gray-900 p-3 rounded-md">"${technique.example}"</p>
+                <strong class="text-pink-400">Prevention:</strong>
+                <p class="mt-2 text-gray-400">${technique.prevention}</p>
+            `;
+            document.getElementById('close-modal-btn').addEventListener('click', () => modal.classList.add('hidden'));
+            modal.classList.remove('hidden');
+        }
+
+        // --- QUIZ ---
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let showFeedback = false;
+
+        function setupQuiz() {
+            document.getElementById('high-score').textContent = localStorage.getItem('phishingQuizHighScore') || 0;
+            document.getElementById('total-questions').textContent = quizQuestions.length;
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const quizContainer = document.getElementById('quiz-container');
+            const question = quizQuestions[currentQuestionIndex];
+            quizContainer.innerHTML = `
+                <div>
+                    <p class="text-lg font-medium text-gray-300 mb-2">Question ${currentQuestionIndex + 1} of ${quizQuestions.length}</p>
+                    <h3 class="text-xl font-semibold text-white mb-6">${question.question}</h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        ${question.options.map(option => `
+                            <button class="quiz-option w-full text-left p-4 rounded-md transition-all duration-300 bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-400" data-answer="${option}">
+                                ${option}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            quizContainer.querySelectorAll('.quiz-option').forEach(button => {
+                button.addEventListener('click', handleAnswer);
+            });
+        }
+        
+        function handleAnswer(event) {
+            if (showFeedback) return;
+            showFeedback = true;
+
+            const selectedAnswer = event.target.dataset.answer;
+            const correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+            
+            if (selectedAnswer === correctAnswer) {
+                score++;
+                event.target.classList.remove('bg-gray-800', 'hover:bg-gray-700');
+                event.target.classList.add('bg-green-500');
+            } else {
+                event.target.classList.remove('bg-gray-800', 'hover:bg-gray-700');
+                event.target.classList.add('bg-red-500');
+                // Highlight the correct answer
+                document.querySelector(`[data-answer="${correctAnswer}"]`).classList.add('bg-green-500/50');
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizQuestions.length) {
+                    renderQuestion();
+                } else {
+                    showFinalScore();
+                }
+                showFeedback = false;
+            }, 1500);
+        }
+
+        function showFinalScore() {
+            const quizContainer = document.getElementById('quiz-container');
+            const highScore = localStorage.getItem('phishingQuizHighScore') || 0;
+            if (score > highScore) {
+                localStorage.setItem('phishingQuizHighScore', score);
+                document.getElementById('high-score').textContent = score;
+            }
+            
+            quizContainer.innerHTML = `
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold text-white">Quiz Complete!</h3>
+                    <p class="mt-4 text-5xl font-extrabold text-cyan-400">${score} / ${quizQuestions.length}</p>
+                    <p class="mt-2 text-lg text-gray-400">${score > 3 ? "Excellent! You're a phishing expert. 🏆" : "Good start! Review the tips to improve. 💪"}</p>
+                    <button id="reset-quiz-btn" class="mt-8 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+                        Try Again
+                    </button>
+                </div>
+            `;
+            document.getElementById('reset-quiz-btn').addEventListener('click', resetQuiz);
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            renderQuestion();
+        }
+
+        // --- THREE.JS SCENE ---
+        function setupLazyThreeJS() {
+            const container = document.getElementById('three-scene-container');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    initThreeJS();
+                    observer.disconnect(); // Initialize only once
+                }
+            }, { threshold: 0.1 });
+            observer.observe(container);
+        }
+
+        function initThreeJS() {
+            document.getElementById('loader').style.display = 'none';
+            const canvas = document.getElementById('three-canvas');
+            const container = document.getElementById('three-scene-container');
+            
+            let scene, camera, renderer, hook, cards = [], raycaster, mouse, intersectedObject, clock;
+            
+            // Scene setup
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 15;
+
+            renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(container.clientWidth, container.clientHeight);
+
+            // Lighting
+            scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+            const directionalLight = new THREE.DirectionalLight(0x00ffff, 1);
+            directionalLight.position.set(5, 5, 5);
+            scene.add(directionalLight);
+            
+            // Central Hook
+            const hookGeometry = new THREE.TorusKnotGeometry(2, 0.3, 100, 16);
+            const hookMaterial = new THREE.MeshStandardMaterial({ color: 0xec4899, roughness: 0.2, metalness: 0.8 });
+            hook = new THREE.Mesh(hookGeometry, hookMaterial);
+            scene.add(hook);
+
+            // Email Cards
+            phishingTechniques.forEach((tech, i) => {
+                const texture = createEmailTexture(tech.title, tech.short);
+                const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                const geometry = new THREE.PlaneGeometry(6, 3);
+                const card = new THREE.Mesh(geometry, material);
+                
+                const angle = (i / phishingTechniques.length) * Math.PI * 2;
+                card.position.x = Math.cos(angle) * 10;
+                card.position.y = (Math.random() - 0.5) * 5;
+                card.position.z = Math.sin(angle) * 10;
+                card.lookAt(new THREE.Vector3(0,0,0));
+                card.userData = tech;
+                scene.add(card);
+                cards.push(card);
+            });
+
+            // Raycasting
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+            clock = new THREE.Clock();
+
+            // Event Listeners
+            container.addEventListener('mousemove', onMouseMove);
+            container.addEventListener('click', onClick);
+            window.addEventListener('resize', onResize);
+
+            function onMouseMove(event) {
+                const rect = renderer.domElement.getBoundingClientRect();
+                mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+            }
+
+            function onClick() {
+                if (intersectedObject) {
+                    showModal(intersectedObject.userData);
+                }
+            }
+
+            function onResize() {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            }
+            
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                const elapsedTime = clock.getElapsedTime();
+
+                hook.rotation.y += 0.005;
+                hook.rotation.x += 0.002;
+
+                cards.forEach((card, i) => {
+                    card.position.y += Math.sin(elapsedTime + i * 2) * 0.005;
+                    card.lookAt(camera.position);
+                });
+                
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObjects(cards);
+
+                if (intersects.length > 0) {
+                    if (intersectedObject !== intersects[0].object) {
+                        if (intersectedObject) intersectedObject.material.color.set(0xffffff);
+                        intersectedObject = intersects[0].object;
+                        intersectedObject.material.color.set(0x2dd4bf);
+                        container.style.cursor = 'pointer';
+                    }
+                } else {
+                    if (intersectedObject) intersectedObject.material.color.set(0xffffff);
+                    intersectedObject = null;
+                    container.style.cursor = 'default';
+                }
+                
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        function createEmailTexture(title, shortText) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const width = 512;
+            const height = 256;
+            canvas.width = width;
+            canvas.height = height;
+
+            ctx.fillStyle = '#111827'; // bg-gray-900
+            ctx.fillRect(0, 0, width, height);
+            ctx.strokeStyle = '#2dd4bf'; // text-cyan-400
+            ctx.lineWidth = 8;
+            ctx.strokeRect(0, 0, width, height);
+            
+            ctx.fillStyle = '#f9a8d4'; // text-pink-300
+            ctx.font = 'bold 48px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(title, width / 2, 80);
+
+            ctx.fillStyle = 'white';
+            ctx.font = '32px Inter, sans-serif';
+            ctx.fillText(shortText, width / 2, 160);
+
+            return new THREE.CanvasTexture(canvas);
+        }
+
+    </script>
+    <!--
+    ================================================================================
+    | TESTING & CI HINTS                                                           |
+    ================================================================================
+
+    --- Playwright Test Cases (e.g., tests/phishing.spec.js) ---
+
+    test('quiz interaction should work correctly', async ({ page }) => {
+      await page.locator('#quiz').scrollIntoViewIfNeeded();
+      await expect(page.getByText('Question 1 of 5')).toBeVisible();
+      await page.getByRole('button', { name: 'Spoofed Email' }).click();
+      await expect(page.getByRole('button', { name: 'Spoofed Email' })).toHaveClass(/bg-green-500/);
+      await expect(page.getByText('Question 2 of 5')).toBeVisible({ timeout: 2000 });
+    });
+
+    --- Lighthouse CI Configuration (.lighthouserc.js) ---
+
+    module.exports = {
+      ci: {
+        collect: { startServerCommand: 'npm run dev', url: ['http://localhost:5173'] },
+        assert: { preset: 'lighthouse:recommended' },
+      },
+    };
+
+    --- GitHub Actions Workflow Skeleton (.github/workflows/ci.yml) ---
+
+    name: Frontend CI
+    on: [push, pull_request]
+    jobs:
+      build-and-test:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: '18'
+            cache: 'npm'
+        - run: npm install
+        - run: npm run build
+        - run: npx playwright install --with-deps
+        - run: npx playwright test
+        - name: Run Lighthouse CI
+          run: |
+            npm install -g @lhci/cli@0.12.x
+            lhci autorun
+    -->
+</body>
+</html>
